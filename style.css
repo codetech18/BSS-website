@@ -40,8 +40,6 @@ button { font: inherit; }
 .hero { position: relative; overflow: hidden; background: var(--paper); }
 .hero-grid { display: grid; grid-template-columns: 56% 44%; min-height: 700px; }
 .hero-copy { display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 1; padding: 74px 6% 54px 0; }
-.eyebrow { margin: 0 0 24px; color: var(--copper); font-size: .69rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
-.eyebrow::before { display: inline-block; width: 26px; height: 2px; margin: 0 11px 3px 0; background: currentColor; content: ''; }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2 { font-family: 'Barlow Condensed', Impact, 'Arial Narrow', sans-serif; font-weight: 700; letter-spacing: -.01em; text-transform: uppercase; }
 h1 { max-width: 850px; margin-bottom: 24px; font-size: clamp(5.8rem, 9vw, 10rem); line-height: .82; }
@@ -61,10 +59,9 @@ h1 em, h2 em { color: var(--copper); font-style: normal; }
 .hero-image { position: relative; min-height: 700px; margin-right: calc((min(1340px, 100vw - 80px) - 100vw) / 2); overflow: hidden; background: #d1d5d2; }
 .hero-image::before { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, #14232c30, transparent 45%); content: ''; pointer-events: none; }
 .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
-.hero-image > span { position: absolute; right: 35px; bottom: 31px; z-index: 2; padding: 11px 16px; background: var(--steel); color: #fff; font-size: .66rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
 .intro-band { background: var(--copper); color: #fff; }
 .intro-band .container { display: flex; align-items: center; justify-content: space-between; min-height: 100px; gap: 20px; }
-.intro-band span, .intro-band a { font-size: .69rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.intro-band a { font-size: .69rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .intro-band strong { font: 600 clamp(1.6rem, 2.6vw, 2.6rem)/1 'Barlow Condensed', Impact, sans-serif; text-transform: uppercase; }
 .intro-band a { padding-bottom: 4px; border-bottom: 1px solid #fff; }
 
@@ -78,13 +75,12 @@ h1 em, h2 em { color: var(--copper); font-style: normal; }
 .product-card:nth-child(-n+2) > img { height: 355px; }
 .product-card:hover > img { filter: saturate(1); }
 .product-card.featured > img { object-position: center 38%; }
-.product-info { display: grid; grid-template-columns: 26px 1fr; column-gap: 13px; align-items: start; flex: 1; padding: 20px 21px 21px; border-top: 3px solid var(--steel); }
+.product-info { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding: 20px 21px 21px; border-top: 3px solid var(--steel); }
 .product-card:nth-child(-n+2) .product-info { padding: 25px 26px; }
-.product-info > span { padding-top: 6px; color: var(--copper); font-size: .67rem; font-weight: 800; }
 .product-info h3 { margin-bottom: 5px; font: 600 1.65rem/1 'Barlow Condensed', Impact, sans-serif; text-transform: uppercase; }
 .product-card:nth-child(-n+2) h3 { font-size: 2.1rem; }
 .product-info p { max-width: 340px; margin-bottom: 0; color: var(--muted); font-size: .76rem; line-height: 1.6; }
-.product-info a { grid-column: 2; justify-self: start; margin-top: 15px; padding-bottom: 3px; border-bottom: 1px solid var(--copper); color: var(--copper); font-size: .66rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.product-info a { margin-top: auto; padding-top: 15px; padding-bottom: 3px; border-bottom: 1px solid var(--copper); color: var(--copper); font-size: .66rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .product-info a:hover { color: var(--ink); border-color: var(--ink); }
 .more-products { margin: 28px 0 0; color: var(--muted); font-size: .81rem; }
 .more-products a { margin-left: 9px; color: var(--steel); font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
@@ -93,8 +89,7 @@ h1 em, h2 em { color: var(--copper); font-style: normal; }
 .services .section-heading > p { color: #bbc9ca; }
 .services h2 em { color: #df997d; }
 .service-grid { border-top: 1px solid #61717a; }
-.service-grid article { display: grid; grid-template-columns: 65px minmax(230px, .9fr) 1fr; align-items: center; gap: 30px; min-height: 122px; border-bottom: 1px solid #61717a; }
-.service-grid article > span { align-self: center; color: #e3a18b; font-size: .67rem; font-weight: 800; letter-spacing: .1em; }
+.service-grid article { display: grid; grid-template-columns: minmax(230px, .9fr) 1fr; align-items: center; gap: 30px; min-height: 122px; border-bottom: 1px solid #61717a; }
 .service-grid h3 { margin: 0; font: 600 2.05rem/1 'Barlow Condensed', Impact, sans-serif; text-transform: uppercase; }
 .service-grid p { max-width: 480px; margin: 0; color: #b8c7c9; font-size: .84rem; line-height: 1.7; }
 
@@ -113,7 +108,7 @@ h1 em, h2 em { color: var(--copper); font-style: normal; }
 .portrait::before { position: absolute; inset: 18px 18px -18px -18px; z-index: 0; border: 2px solid var(--copper); content: ''; pointer-events: none; }
 .portrait img { position: relative; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .about-grid h2 { margin-bottom: 29px; }
-.about-grid p:not(.eyebrow) { max-width: 610px; color: var(--muted); font-size: .88rem; line-height: 1.85; }
+.about-grid p { max-width: 610px; color: var(--muted); font-size: .88rem; line-height: 1.85; }
 .mission { display: grid; grid-template-columns: 95px 1fr; gap: 20px; max-width: 610px; margin: 28px 0 20px; padding: 20px 0; border-block: 1px solid var(--line); }
 .mission strong { color: var(--copper); font-size: .69rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .mission span { color: var(--muted); font-size: .8rem; }
@@ -121,7 +116,7 @@ h1 em, h2 em { color: var(--copper); font-style: normal; }
 .contact { padding-block: 95px; background: var(--steel); color: #fff; }
 .contact-grid { display: grid; grid-template-columns: 1fr .85fr; align-items: end; gap: 11%; }
 .contact h2 em { color: #dfa18b; }
-.contact p:not(.eyebrow) { max-width: 460px; color: #d5e0e2; font-size: .9rem; line-height: 1.8; }
+.contact-grid > div:first-child > p { max-width: 460px; color: #d5e0e2; font-size: .9rem; line-height: 1.8; }
 .button-light { margin-top: 15px; background: #fff; color: var(--steel); }
 .button-light:hover { background: #e8eeee; }
 .contact-details { padding: 27px 0 0; border-top: 1px solid #9fb3ba; }
@@ -162,7 +157,6 @@ h1 em, h2 em { color: var(--copper); font-style: normal; }
   .hero-facts { margin-top: 43px; }
   .hero-image { height: 490px; min-height: 0; margin-inline: -18px; }
   .intro-band .container { flex-wrap: wrap; min-height: 0; padding-block: 25px; gap: 5px 25px; }
-  .intro-band strong { width: 100%; }
   .section { padding-block: 84px; }
   .section-heading { display: block; margin-bottom: 35px; }
   .section-heading > p { max-width: 500px; margin-top: 22px; }
@@ -171,8 +165,7 @@ h1 em, h2 em { color: var(--copper); font-style: normal; }
   .product-card:nth-child(-n+2) > img { height: 260px; }
   .product-card:nth-child(-n+2) .product-info { padding: 20px 21px; }
   .product-card:nth-child(-n+2) h3 { font-size: 1.65rem; }
-  .service-grid article { grid-template-columns: 45px 1fr; gap: 8px 12px; padding-block: 20px; }
-  .service-grid p { grid-column: 2; }
+  .service-grid article { grid-template-columns: 1fr; gap: 8px; padding-block: 20px; }
   .work-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .work-grid .large { grid-column: span 2; }
   .work-grid figure, .work-grid figure:nth-child(2), .work-grid figure:nth-child(3) { height: 310px; margin-top: 0; }
@@ -191,7 +184,6 @@ h1 em, h2 em { color: var(--copper); font-style: normal; }
   .hero-facts strong { font-size: 1.08rem; }
   .hero-facts span { font-size: .58rem; }
   .hero-image { height: 420px; }
-  .hero-image > span { right: 15px; bottom: 15px; }
   .product-grid { grid-template-columns: 1fr; }
   .product-card:nth-child(-n+2) > img, .product-card > img { height: 265px; }
   .work-grid figure, .work-grid figure:nth-child(2), .work-grid figure:nth-child(3) { height: 195px; }
