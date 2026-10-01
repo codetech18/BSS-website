@@ -1,95 +1,20 @@
-let search = document.querySelector('.search');
-document.querySelector('#search').onclick=() =>{
-    search.classList.toggle('active'); 
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.site-nav');
+
+function closeMenu() {
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Open menu');
+  navigation.classList.remove('is-open');
 }
 
-
-let navbar = document.querySelector('.navbar');
-document.querySelector('#menu-bar').onclick=() =>{
-    navbar.classList.toggle('active'); 
-}
-
-
-
-
-var swiper = new Swiper(".product-row", {
-  loop:true,
-  spaceBetween: 30,
-  centerdSlides:true,
-  autoplay:{
-      delay:5000,
-      disableOnInteraction:false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
+menuButton.addEventListener('click', () => {
+  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', String(!isOpen));
+  menuButton.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+  navigation.classList.toggle('is-open', !isOpen);
 });
-
-
-var swiper = new Swiper(".blogs-row", {
-  loop:true,
-  spaceBetween: 30,
-  centerdSlides:true,
-  autoplay:{
-      delay:9500,
-      disableOnInteraction:false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation:{
-    nextE1 :".swiper-button-next",
-    prevE1 :".swiper-button-prev",
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 1,
-    },
-    1024: {
-      slidesPerView: 1,
-    },
-  },
+navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeMenu();
 });
-
-
-
-var swiper = new Swiper(".review-row", {
-  loop:true,
-  spaceBetween: 30,
-  centerdSlides:true,
-  autoplay:{
-      delay:2000,
-      disableOnInteraction:false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-});
+document.querySelector('#year').textContent = new Date().getFullYear();
